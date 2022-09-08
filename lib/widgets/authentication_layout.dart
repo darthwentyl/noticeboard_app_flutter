@@ -2,11 +2,20 @@ import 'dart:io';
 
 import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:noticeboard/designs/app_colors.dart';
-import 'package:noticeboard/designs/app_strings.dart';
+import 'package:noticeboard/const/app_colors.dart';
+import 'package:noticeboard/const/app_strings.dart';
+import 'package:noticeboard/controllers/login_controller.dart';
+import 'package:noticeboard/pages/robot_verify_page.dart';
 
-class AuthenticationLayout extends StatelessWidget {
+class AuthenticationLayout extends StatefulWidget {
   const AuthenticationLayout({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _AuthenticationLayoutState();
+}
+
+class _AuthenticationLayoutState extends State<AuthenticationLayout> {
+  final LoginController _loginController = LoginController();
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +87,17 @@ class AuthenticationLayout extends StatelessWidget {
     if (Platform.isAndroid) {
       return GoogleAuthButton(
         text: AppStrings.googleLoginText,
-        onPressed: () {},
+        onPressed: () {
+          if (_loginController.login()) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const RobotVerifyPage(),
+                fullscreenDialog: true,
+              ),
+            );
+          }
+        },
       );
     } else if (Platform.isIOS) {
       return AppleAuthButton(
@@ -87,7 +106,7 @@ class AuthenticationLayout extends StatelessWidget {
       );
     } else {
       return const Text(
-        AppStrings.unknownLoginText,
+        ErrStrings.unknownOS,
         textAlign: TextAlign.center,
       );
     }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:noticeboard/designs/app_theme.dart';
+import 'package:noticeboard/const/app_theme.dart';
 import 'package:noticeboard/pages/login_page.dart';
 
 void main() {
