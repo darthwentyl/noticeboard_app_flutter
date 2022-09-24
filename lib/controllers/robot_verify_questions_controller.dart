@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:noticeboard/datas/verify_questions.dart';
+import 'package:noticeboard/datas/question.dart';
 
 class RobotVerifyQuestionsController {
   // FIXME: Now it is a stub. In future it will be asked from datas base

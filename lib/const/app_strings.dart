@@ -9,7 +9,7 @@ class AppStrings {
 
 class ErrStrings {
   static const String errStr = "Błąd";
-  static const String unknownOS = "Nie znany system";
+  static const String unknownOS = "Nie znany system operacyjny.";
   static const String emptyQuestionsList =
       "Nie moge pobrać pytań. \nsprawdź połączenie z internetem.";
 }

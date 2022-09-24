@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_strings.dart';
 import 'package:noticeboard/controllers/login_controller.dart';
@@ -105,9 +106,17 @@ class _AuthenticationLayoutState extends State<AuthenticationLayout> {
         onPressed: () {},
       );
     } else {
-      return const Text(
-        ErrStrings.unknownOS,
-        textAlign: TextAlign.center,
+      return AlertDialog(
+        title: const Text(ErrStrings.errStr),
+        content: const Text(ErrStrings.unknownOS),
+        actions: [
+          TextButton(
+            child: const Text(AppStrings.back),
+            onPressed: () {
+              SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+            },
+          ),
+        ],
       );
     }
   }
