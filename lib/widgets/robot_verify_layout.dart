@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:noticeboard/const/app_strings.dart';
-import 'package:noticeboard/parsers/robot_verify_questions_parser.dart';
+import 'package:noticeboard/controllers/robot_verify_questions_controller.dart';
+import 'package:noticeboard/datas/verify_questions.dart';
 
 class RobotVerifyLayout extends StatefulWidget {
   const RobotVerifyLayout({Key? key}) : super(key: key);
@@ -11,13 +12,13 @@ class RobotVerifyLayout extends StatefulWidget {
 }
 
 class _RobotVerifyLayoutState extends State<RobotVerifyLayout> {
-  List<String> _questions = [];
+  List<Question> _questions = [];
 
   @override
   void initState() {
     super.initState();
-    final RobotVerifyQuestionsParser parser = RobotVerifyQuestionsParser();
-    _questions = parser.getQuestions();
+    var controller = RobotVerifyQuestionsController();
+    _questions = controller.getQuestions();
   }
 
   @override
