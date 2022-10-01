@@ -3,8 +3,13 @@ class AppStrings {
   static const String googleLoginText = "Zaloguj się za pomocą Google";
 
   static const String loginTitle = "Jagodno\n Mieszkańcy";
+  static const String verificationTitle = "Weryfikacja mieszkańców";
+}
 
+class ButtonStrings {
   static const String back = "cofnij";
+  static const String yes = "Tak";
+  static const String no = "Nie";
 }
 
 class ErrStrings {

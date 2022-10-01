@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:noticeboard/const/app_strings.dart';
 import 'package:noticeboard/controllers/robot_verify_questions_controller.dart';
 import 'package:noticeboard/datas/question.dart';
+import 'package:noticeboard/layaout_elements/verification_box.dart';
 
 class RobotVerifyLayout extends StatefulWidget {
   const RobotVerifyLayout({Key? key}) : super(key: key);
@@ -13,6 +14,7 @@ class RobotVerifyLayout extends StatefulWidget {
 
 class _RobotVerifyLayoutState extends State<RobotVerifyLayout> {
   List<Question> _questions = [];
+  bool _isVerified = false;
 
   @override
   void initState() {
@@ -25,12 +27,12 @@ class _RobotVerifyLayoutState extends State<RobotVerifyLayout> {
   Widget build(BuildContext context) {
     return _questions.isEmpty
         ? _showQuestionsIsEmptySnackBar()
-        : const Text("TBD");
+        : VerificationBox(isVerified: _isVerified);
   }
 
   Widget backButton() {
     return TextButton(
-      child: const Text(AppStrings.back),
+      child: const Text(ButtonStrings.back),
       onPressed: () {
         Navigator.of(context).pop();
       },

@@ -111,7 +111,7 @@ class _AuthenticationLayoutState extends State<AuthenticationLayout> {
         content: const Text(ErrStrings.unknownOS),
         actions: [
           TextButton(
-            child: const Text(AppStrings.back),
+            child: const Text(ButtonStrings.back),
             onPressed: () {
               SystemChannels.platform.invokeMethod('SystemNavigator.pop');
             },

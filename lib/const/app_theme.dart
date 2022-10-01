@@ -9,3 +9,7 @@ class AppTheme {
     );
   }
 }
+
+class BoxTheme {
+  static const double radius = 11.0;
+}
