@@ -2,7 +2,6 @@ class AppStrings {
   static const String appleLoginText = "Zaloguj się za pomocą Apple";
   static const String googleLoginText = "Zaloguj się za pomocą Google";
 
-  static const String loginTitle = "Jagodno\n Mieszkańcy";
   static const String verificationTitle = "Weryfikacja mieszkańców";
 }
 
