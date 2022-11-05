@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_strings.dart';
 import 'package:noticeboard/const/app_theme.dart';
+import 'package:noticeboard/datas/question.dart';
 import 'package:noticeboard/utils/size_getter.dart';
 
 class VerificationBox extends StatefulWidget {
-  VerificationBox({Key? key, required isVerified}) : super(key: key);
+  VerificationBox({Key? key, required isVerified, required questions})
+      : super(key: key);
 
   bool isVerified = false;
+  List<Question> questions = [];
 
   @override
   State<StatefulWidget> createState() => _VerificationBoxState();

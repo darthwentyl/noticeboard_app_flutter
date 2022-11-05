@@ -20,14 +20,18 @@ class _RobotVerifyLayoutState extends State<RobotVerifyLayout> {
   void initState() {
     super.initState();
     var controller = RobotVerifyQuestionsController();
-    _questions = controller.getQuestions();
+    controller.getQuestions().then((value) {
+      setState(() {
+        _questions = value;
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return _questions.isEmpty
         ? _showQuestionsIsEmptySnackBar()
-        : VerificationBox(isVerified: _isVerified);
+        : VerificationBox(isVerified: _isVerified, questions: _questions);
   }
 
   Widget backButton() {

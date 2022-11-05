@@ -1,10 +1,19 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'question.g.dart';
+
+@JsonSerializable()
 class Question {
+  Question(this.question, this.answer);
+
   final String question;
   final String answer;
 
-  Question(this.question, this.answer);
+  factory Question.fromJson(dynamic json) => _$QuestionFromJson(json);
+  Map<String, dynamic> toJson() => _$QuestionToJson(this);
 
-  factory Question.fromJson(dynamic json) {
-    return Question(json['question'] as String, json['answer'] as String);
+  @override
+  String toString() {
+    return 'question: $question; answer: $answer';
   }
 }
