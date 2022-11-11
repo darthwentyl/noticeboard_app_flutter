@@ -2,39 +2,39 @@
     "questions":
     [
         {
-            "question": "Czy na osiedle Jagodno jeździ tramwaj 33 ?",
+            "question": "Czy na osiedle Jagodno jeździ tramwaj 33?",
             "answer": "Nie"
         },
         {
-            "question": "Czy w bliskim sąsiedztwie znajduje się galeria Magnolia ?",
+            "question": "Czy w bliskim sąsiedztwie znajduje się galeria Magnolia?",
             "answer": "Nie"
         },
         {
-            "question": "Czy na osiedle Jagodno jeździ tramwaj 10 ?",
+            "question": "Czy na osiedle Jagodno jeździ tramwaj 10?",
             "answer": "Nie"
         },
         {
-            "question": "Czy na osiedle Jagodno jeździ tramwaj 31 ?",
+            "question": "Czy na osiedle Jagodno jeździ tramwaj 31?",
             "answer": "Nie"
         },
         {
-            "question": "Czy w bliskim sąsiedztwie znajduje się Centrum Handlowe Korona ?",
+            "question": "Czy w bliskim sąsiedztwie znajduje się Centrum Handlowe Korona?",
             "answer": "Nie"
         },
         {
-            "question": "Czy na osiedle Jagodno można dojechać ulicą Buforową ?",
+            "question": "Czy na osiedle Jagodno można dojechać ulicą Buforową?",
             "answer": "Tak"
         },
         {
-            "question": "Czy na osiedlu Jagodno znajduje się pl. Grunwaldzki ?",
+            "question": "Czy na osiedlu Jagodno znajduje się pl. Grunwaldzki?",
             "answer":"Nie"
         },
         {
-            "question": "Czy na osiedle Jagodno jezdzą miejskie autobusy ?",
+            "question": "Czy na osiedle Jagodno jezdzą miejskie autobusy?",
             "answer": "Tak"
         },
         {
-            "question": "Czy na osiedlu Jagodno znajduje się kościół ?",
+            "question": "Czy na osiedlu Jagodno znajduje się kościół?",
             "answer":"Tak"
         }
     ]

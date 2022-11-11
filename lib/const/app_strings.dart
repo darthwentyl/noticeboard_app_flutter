@@ -16,4 +16,5 @@ class ErrStrings {
   static const String unknownOS = "Nie znany system operacyjny.";
   static const String emptyQuestionsList =
       "Nie moge pobrać pytań. \nsprawdź połączenie z internetem.";
+  static const String robotVerifyFailed = "Weryfikacja się nie powiodła.";
 }

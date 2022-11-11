@@ -72,6 +72,7 @@ class _AuthenticationLayoutState extends State<AuthenticationLayout> {
           }
         },
       );
+      //  TODO: add any action for IOS system!!!
     } else if (Platform.isIOS) {
       return AppleAuthButton(
         text: AppStrings.appleLoginText,
