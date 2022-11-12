@@ -61,6 +61,7 @@ class _AuthenticationLayoutState extends State<AuthenticationLayout> {
       return GoogleAuthButton(
         text: AppStrings.googleLoginText,
         onPressed: () {
+          // TODO: implements true login by google account
           if (_loginController.login()) {
             Navigator.push(
               context,
@@ -72,11 +73,21 @@ class _AuthenticationLayoutState extends State<AuthenticationLayout> {
           }
         },
       );
-      //  TODO: add any action for IOS system!!!
+      //  TODO: implements true login by apple account
     } else if (Platform.isIOS) {
       return AppleAuthButton(
         text: AppStrings.appleLoginText,
-        onPressed: () {},
+        onPressed: () {
+          if (_loginController.login()) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const RobotVerifyPage(),
+                fullscreenDialog: true,
+              ),
+            );
+          }
+        },
       );
     } else {
       return AlertDialog(
