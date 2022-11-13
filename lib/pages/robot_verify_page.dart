@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:noticeboard/widgets/robot_verify_layout.dart';
+import 'package:noticeboard/layouts//robot_verify_layout.dart';
 
 class RobotVerifyPage extends StatefulWidget {
   const RobotVerifyPage({Key? key}) : super(key: key);

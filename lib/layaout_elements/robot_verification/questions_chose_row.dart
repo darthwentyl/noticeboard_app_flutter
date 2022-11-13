@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_strings.dart';
@@ -12,7 +11,7 @@ class QuestionsChoseRow extends StatelessWidget {
 
   final List<Question> _questions;
   final int _idx;
-  final BoolToVoidCallback _refreshCallback;
+  final VoidCallback<bool> _refreshCallback;
 
   @override
   Widget build(BuildContext context) {

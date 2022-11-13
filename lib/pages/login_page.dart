@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:noticeboard/widgets/authentication_layout.dart';
+import 'package:noticeboard/layouts/authentication_layout.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

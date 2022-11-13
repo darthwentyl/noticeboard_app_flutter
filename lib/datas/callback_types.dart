@@ -1,1 +1,1 @@
-typedef BoolToVoidCallback = void Function(bool);
+typedef VoidCallback<T> = void Function(T);

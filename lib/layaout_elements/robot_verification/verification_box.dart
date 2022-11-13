@@ -13,7 +13,7 @@ class VerificationBox extends StatefulWidget {
   VerificationBox(this.questions, this.onVerify, {Key? key}) : super(key: key);
 
   List<Question> questions = [];
-  BoolToVoidCallback onVerify;
+  VoidCallback<bool> onVerify;
 
   @override
   State<StatefulWidget> createState() =>
@@ -24,7 +24,7 @@ class _VerificationBoxState extends State<VerificationBox> {
   _VerificationBoxState(this._questions, this._onVerify);
 
   List<Question> _questions;
-  BoolToVoidCallback _onVerify;
+  VoidCallback<bool> _onVerify;
 
   int _curIdx = 0;
   bool _isVerified = true;

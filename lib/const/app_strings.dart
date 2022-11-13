@@ -6,7 +6,7 @@ class AppStrings {
 }
 
 class ButtonStrings {
-  static const String back = "cofnij";
+  static const String back = "Cofnij";
   static const String yes = "Tak";
   static const String no = "Nie";
 }
