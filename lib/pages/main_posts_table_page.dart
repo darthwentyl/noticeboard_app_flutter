@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:noticeboard/layouts/main_post_table_layout.dart';
+import 'package:noticeboard/layouts/main_posts_table_layout.dart';
 
 class MainPostsTablePage extends StatefulWidget {
   const MainPostsTablePage({Key? key}) : super(key: key);
