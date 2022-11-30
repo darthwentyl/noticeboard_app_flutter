@@ -21,7 +21,7 @@ class RobotVerifyQuestionsController {
   }
 
   Future<String> _getQuestionnaireJson() async {
-    return await rootBundle.loadString('assets/questions/questionnaire.json');
+    return await rootBundle.loadString('assets/jsons/questionnaire.json');
   }
 
   List<Question> _takeRandomQuestions(List<Question> questions) {

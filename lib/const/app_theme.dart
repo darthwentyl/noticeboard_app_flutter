@@ -13,3 +13,9 @@ class AppTheme {
 class BoxTheme {
   static const double radius = 11.0;
 }
+
+class CustomTextTheme {
+  static TextStyle textStyle() {
+    return const TextStyle(fontSize: 16.0, color: AppColors.customWhite);
+  }
+}

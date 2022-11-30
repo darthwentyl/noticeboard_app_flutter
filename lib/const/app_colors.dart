@@ -19,4 +19,6 @@ class AppColors {
   static const Color bottomNavigationBarItemBackground = Color(0xFF232833);
   static const Color bottomNavigationBarUnselect = Color(0xFFFFFFFF);
   static const Color bottomNavigationBarSelect = Color(0xFF0884FF);
+
+  static const Color heartColorIcon = Color(0xFFDF1825);
 }

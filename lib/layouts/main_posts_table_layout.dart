@@ -15,7 +15,14 @@ class MainPostsTableLayout extends StatefulWidget {
 class _MainPostsTableLayout extends State<MainPostsTableLayout> {
   int _selectedBottomNavigationItem = 0;
 
-  WidgetStateController _widgetStateController = WidgetStateController();
+  final _key = GlobalKey();
+  late final WidgetStateController _widgetStateController;
+
+  @override
+  void initState() {
+    _widgetStateController = WidgetStateController(_key);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +31,7 @@ class _MainPostsTableLayout extends State<MainPostsTableLayout> {
       body: Column(
         children: [
           Categories(_onSetCategories, _widgetStateController.getState()),
+          _widgetStateController.getWidget(),
         ],
       ),
       bottomNavigationBar: MainPostsNavigationBar(

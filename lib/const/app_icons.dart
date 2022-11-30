@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:noticeboard/const/app_colors.dart';
 
 class AppIcons {
   static Icon home = const Icon(Icons.home_outlined);
@@ -10,5 +11,19 @@ class AppIcons {
         fontFamily: CupertinoIcons.iconFont,
         fontPackage: CupertinoIcons.iconFontPackage),
     size: 20.0,
+  );
+  static const Icon heart = const Icon(
+    IconData(0xf443,
+        fontFamily: CupertinoIcons.iconFont,
+        fontPackage: CupertinoIcons.iconFontPackage),
+  );
+  static const Icon comment = const Icon(
+    IconData(0xee41, fontFamily: 'MaterialIcons'),
+    color: AppColors.customBlue,
+  );
+  static const Icon trash = const Icon(
+    IconData(0xf4c4,
+        fontFamily: CupertinoIcons.iconFont,
+        fontPackage: CupertinoIcons.iconFontPackage),
   );
 }
