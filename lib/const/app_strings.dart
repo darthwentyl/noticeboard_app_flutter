@@ -12,7 +12,7 @@ class ButtonStrings {
 
   static const String categoriesPost = "Post";
   static const String categoriesBuySell = "Kup/Sprzedaj";
-  static const String categoriesAdverisment = "Reklama";
+  static const String categoriesAdvertisement = "Reklama";
   static const String categoriesContest = "Konkursy";
   static const String categoriesVip = "Vip";
   static const String categoriesInfo = "Info";

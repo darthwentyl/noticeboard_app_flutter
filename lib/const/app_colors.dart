@@ -12,6 +12,9 @@ class AppColors {
   static const Color textButtonBackground = Color(0x400884FF);
   static const Color textButtonText = Color(0xFF0884FF);
 
+  static const Color textButtonSelectBackground = Color(0xFF0884FF);
+  static const Color textButtonSelectText = Color(0xFFFFFFFF);
+
   static const Color bottomNavigationBarBackground = Color(0xFF161D27);
   static const Color bottomNavigationBarItemBackground = Color(0xFF232833);
   static const Color bottomNavigationBarUnselect = Color(0xFFFFFFFF);

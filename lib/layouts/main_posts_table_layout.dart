@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:noticeboard/controllers/widget_state_controller.dart';
+import 'package:noticeboard/datas/widget_states.dart';
 import 'package:noticeboard/layaout_elements/posts_table/categories.dart';
 import 'package:noticeboard/layaout_elements/posts_table/main_posts_app_bar.dart';
 import 'package:noticeboard/layaout_elements/posts_table/main_posts_navigation_bar.dart';
@@ -11,8 +13,9 @@ class MainPostsTableLayout extends StatefulWidget {
 }
 
 class _MainPostsTableLayout extends State<MainPostsTableLayout> {
-  // TODO: move to enum
   int _selectedBottomNavigationItem = 0;
+
+  WidgetStateController _widgetStateController = WidgetStateController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class _MainPostsTableLayout extends State<MainPostsTableLayout> {
       appBar: MainPostsAppBar().build(context),
       body: Column(
         children: [
-          Categories(),
+          Categories(_onSetCategories, _widgetStateController.getState()),
         ],
       ),
       bottomNavigationBar: MainPostsNavigationBar(
@@ -31,6 +34,12 @@ class _MainPostsTableLayout extends State<MainPostsTableLayout> {
   void _onSelectBottomNavigationItem(int idx) {
     setState(() {
       _selectedBottomNavigationItem = idx;
+    });
+  }
+
+  void _onSetCategories(EWidgetStates state) {
+    setState(() {
+      _widgetStateController.setState(state);
     });
   }
 }

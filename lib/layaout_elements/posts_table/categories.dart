@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_strings.dart';
 import 'package:noticeboard/const/app_theme.dart';
+import 'package:noticeboard/datas/callback_types.dart';
+import 'package:noticeboard/datas/widget_states.dart';
 import 'package:noticeboard/utils/size_getter.dart';
 
 class Categories extends StatelessWidget {
-  const Categories({Key? key}) : super(key: key);
+  Categories(this.callback, this._currState, {Key? key}) : super(key: key);
 
   static const spacing = 6.0;
+  VoidCallback<EWidgetStates> callback;
+  EWidgetStates _currState;
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +30,15 @@ class Categories extends StatelessWidget {
               child: Wrap(
                 spacing: spacing,
                 children: [
-                  _button(ButtonStrings.categoriesPost),
-                  _button(ButtonStrings.categoriesBuySell),
-                  _button(ButtonStrings.categoriesAdverisment),
-                  _button(ButtonStrings.categoriesContest),
-                  _button(ButtonStrings.categoriesVip),
-                  _button(ButtonStrings.categoriesInfo),
+                  _button(ButtonStrings.categoriesPost, EWidgetStates.posts),
+                  _button(
+                      ButtonStrings.categoriesBuySell, EWidgetStates.buySell),
+                  _button(ButtonStrings.categoriesAdvertisement,
+                      EWidgetStates.advertisement),
+                  _button(
+                      ButtonStrings.categoriesContest, EWidgetStates.contest),
+                  _button(ButtonStrings.categoriesVip, EWidgetStates.vip),
+                  _button(ButtonStrings.categoriesInfo, EWidgetStates.info),
                 ],
               ),
             ),
@@ -41,15 +48,42 @@ class Categories extends StatelessWidget {
     );
   }
 
-  _button(String text) {
+  _button(String text, EWidgetStates state) {
+    return _currState == state
+        ? _selectButton(text, state)
+        : _unselectButton(text, state);
+  }
+
+  _selectButton(String text, EWidgetStates state) {
+    return TextButton(
+      style: TextButton.styleFrom(
+        backgroundColor: AppColors.textButtonSelectBackground,
+        padding: const EdgeInsets.all(spacing),
+      ),
+      onPressed: () {
+        callback(state);
+      },
+      child: Text(
+        text,
+        style: const TextStyle(
+            fontSize: 16, color: AppColors.textButtonSelectText),
+      ),
+    );
+  }
+
+  _unselectButton(String text, EWidgetStates state) {
     return TextButton(
       style: TextButton.styleFrom(
         backgroundColor: AppColors.textButtonBackground,
-        padding: const EdgeInsets.all(8.0),
-        textStyle: const TextStyle(fontSize: 16),
+        padding: const EdgeInsets.all(spacing),
       ),
-      onPressed: () {},
-      child: Text(text),
+      onPressed: () {
+        callback(state);
+      },
+      child: Text(
+        text,
+        style: const TextStyle(fontSize: 16),
+      ),
     );
   }
 }

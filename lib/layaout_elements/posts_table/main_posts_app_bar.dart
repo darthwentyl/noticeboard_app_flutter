@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:badges/badges.dart';
 import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_icons.dart';
