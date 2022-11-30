@@ -4,7 +4,7 @@ import 'package:badges/badges.dart';
 import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_icons.dart';
 
-class MainPostsAppBarBuilder {
+class MainPostsAppBar {
   build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.mainBackground,

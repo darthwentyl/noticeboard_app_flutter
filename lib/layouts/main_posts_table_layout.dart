@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:noticeboard/layaout_elements/posts_table/main_posts_app_bar_builder.dart';
+import 'package:noticeboard/layaout_elements/posts_table/categories.dart';
+import 'package:noticeboard/layaout_elements/posts_table/main_posts_app_bar.dart';
 import 'package:noticeboard/layaout_elements/posts_table/main_posts_navigation_bar.dart';
 
 class MainPostsTableLayout extends StatefulWidget {
@@ -16,16 +17,11 @@ class _MainPostsTableLayout extends State<MainPostsTableLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainPostsAppBarBuilder().build(context),
-      body: Center(
-        child: Text(
-          'select item: $_selectedBottomNavigationItem',
-          style: const TextStyle(
-            color: Colors.red,
-            fontSize: 16,
-            decoration: TextDecoration.none,
-          ),
-        ),
+      appBar: MainPostsAppBar().build(context),
+      body: Column(
+        children: [
+          Categories(),
+        ],
       ),
       bottomNavigationBar: MainPostsNavigationBar(
           _onSelectBottomNavigationItem, _selectedBottomNavigationItem),

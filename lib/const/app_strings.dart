@@ -9,6 +9,13 @@ class ButtonStrings {
   static const String back = "Cofnij";
   static const String yes = "Tak";
   static const String no = "Nie";
+
+  static const String categoriesPost = "Post";
+  static const String categoriesBuySell = "Kup/Sprzedaj";
+  static const String categoriesAdverisment = "Reklama";
+  static const String categoriesContest = "Konkursy";
+  static const String categoriesVip = "Vip";
+  static const String categoriesInfo = "Info";
 }
 
 class ErrStrings {

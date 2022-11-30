@@ -16,7 +16,8 @@ class MainPostsNavigationBar extends StatelessWidget {
     return BottomNavigationBar(
       items: [
         _buildItem(AppIcons.home),
-        _buildItem(AppIcons.add),
+        _buildItem(AppIcons.add,
+            background: AppColors.bottomNavigationBarItemBackground),
         _buildItem(AppIcons.person),
       ],
       backgroundColor: AppColors.bottomNavigationBarBackground,
@@ -29,7 +30,9 @@ class MainPostsNavigationBar extends StatelessWidget {
     );
   }
 
-  _buildItem(Icon icon) {
-    return BottomNavigationBarItem(icon: icon, label: '');
+  _buildItem(Icon icon,
+      {String label = '', Color background = AppColors.mainBackground}) {
+    return BottomNavigationBarItem(
+        icon: icon, label: label, backgroundColor: background);
   }
 }
