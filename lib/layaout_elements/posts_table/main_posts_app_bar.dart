@@ -1,5 +1,5 @@
+import 'package:badges/badges.dart' as badge;
 import 'package:flutter/material.dart';
-import 'package:badges/badges.dart';
 import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_icons.dart';
 
@@ -52,8 +52,8 @@ class MainPostsAppBar {
   }
 
   _getBellIcon() {
-    return Badge(
-      position: BadgePosition.topEnd(top: -15, end: -15),
+    return badge.Badge(
+      position: badge.BadgePosition.topEnd(top: -15, end: -15),
       badgeContent: const Text(
         '+99',
         style: TextStyle(
