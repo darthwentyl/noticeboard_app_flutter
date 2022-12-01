@@ -8,6 +8,7 @@ import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_strings.dart';
 import 'package:noticeboard/controllers/login_controller.dart';
 import 'package:noticeboard/pages/robot_verify_page.dart';
+import 'package:noticeboard/utils/empty_size_box.dart';
 
 class AuthenticationLayout extends StatefulWidget {
   const AuthenticationLayout({Key? key}) : super(key: key);
@@ -31,11 +32,11 @@ class _AuthenticationLayoutState extends State<AuthenticationLayout> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _emptySizedBox(),
+            EmptySizeBox.get(height: 16.0),
             _houseEmoji(5.0),
-            _emptySizedBox(),
+            EmptySizeBox.get(height: 16.0),
             _chooseAuthButton(),
-            _emptySizedBox(),
+            EmptySizeBox.get(height: 16.0),
           ],
         ),
       ),
@@ -47,12 +48,6 @@ class _AuthenticationLayoutState extends State<AuthenticationLayout> {
       child: SvgPicture.asset(
         'assets/icons/logo.svg',
       ),
-    );
-  }
-
-  _emptySizedBox() {
-    return const SizedBox(
-      height: 16.0,
     );
   }
 

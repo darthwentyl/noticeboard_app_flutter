@@ -5,6 +5,7 @@ class AppStrings {
   static const String verificationTitle = "Weryfikacja mieszkańców";
 
   static const String loading = "Ładuję dane";
+  static const String comments = "Komentarze";
 }
 
 class ButtonStrings {

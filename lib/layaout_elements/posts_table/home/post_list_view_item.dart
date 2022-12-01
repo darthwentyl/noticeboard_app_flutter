@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_icons.dart';
+import 'package:noticeboard/const/app_strings.dart';
 import 'package:noticeboard/const/app_theme.dart';
 import 'package:noticeboard/datas/post.dart';
+import 'package:noticeboard/utils/get_initials.dart';
 import 'package:noticeboard/utils/size_getter.dart';
 
 class PostListViewItem extends StatelessWidget {
@@ -46,7 +48,7 @@ class PostListViewItem extends StatelessWidget {
           backgroundColor: AppColors.customBlue,
           child: CircleAvatar(
             backgroundColor: AppColors.boxBackground,
-            child: Text(_getInitials(
+            child: Text(GetInitials.get(
                 post.author)), // TODO: It should be taken from user profile
           ),
         ),
@@ -111,9 +113,13 @@ class PostListViewItem extends StatelessWidget {
         const Spacer(),
         badge.Badge(
           badgeColor: AppColors.customBlue,
-          position: badge.BadgePosition.bottomStart(bottom: -16, start: -24),
+          shape: badge.BadgeShape.square,
+          borderRadius: BorderRadius.circular(2.0),
+          padding: const EdgeInsets.all(0.0),
+          position: badge.BadgePosition.bottomStart(start: 0, bottom: -2.0),
           badgeContent: Text(
             '${post.comments}',
+            textAlign: TextAlign.left,
             style: const TextStyle(
               color: AppColors.customWhite,
               fontSize: 10.0,
@@ -122,16 +128,23 @@ class PostListViewItem extends StatelessWidget {
           ),
           child: InkWell(
             child: Container(
-              color: AppColors.textButtonBackground,
-              child: Row(
-                children: const [
-                  Text(
-                    'Komentarze',
-                    style:
-                        TextStyle(fontSize: 12.0, color: AppColors.customBlue),
-                  ),
-                  AppIcons.comment,
-                ],
+              decoration: const BoxDecoration(
+                color: AppColors.textButtonBackground,
+                borderRadius:
+                    BorderRadius.all(Radius.circular(BoxTheme.radius)),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Row(
+                  children: const [
+                    Text(
+                      AppStrings.comments,
+                      style: TextStyle(
+                          fontSize: 10.0, color: AppColors.customWhite),
+                    ),
+                    AppIcons.comment,
+                  ],
+                ),
               ),
             ),
             onTap: () {
@@ -142,8 +155,4 @@ class PostListViewItem extends StatelessWidget {
       ],
     );
   }
-
-  _getInitials(String author) => author.isNotEmpty
-      ? author.trim().split(' ').map((l) => l[0]).take(2).join()
-      : '';
 }

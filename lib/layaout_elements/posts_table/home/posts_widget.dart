@@ -49,6 +49,7 @@ class _PostsWidgetState extends State<PostsWidget> {
             ),
           )
         : const Expanded(
+            // TODO: it doesn't work. I see it but I don't see animation
             child: LoadingWidget(),
           );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:noticeboard/controllers/widget_state_controller.dart';
 import 'package:noticeboard/datas/widget_states.dart';
 import 'package:noticeboard/layaout_elements/posts_table/categories.dart';
+import 'package:noticeboard/layaout_elements/posts_table/home/posts_widget.dart';
 import 'package:noticeboard/layaout_elements/posts_table/main_posts_app_bar.dart';
 import 'package:noticeboard/layaout_elements/posts_table/main_posts_navigation_bar.dart';
 
@@ -13,16 +14,16 @@ class MainPostsTableLayout extends StatefulWidget {
 }
 
 class _MainPostsTableLayout extends State<MainPostsTableLayout> {
+  _MainPostsTableLayout() {
+    _widgetStateController = WidgetStateController();
+    _widgetStateController.registerWidget(
+        EWidgetStates.posts, const PostsWidget());
+  }
+
   int _selectedBottomNavigationItem = 0;
 
   final _key = GlobalKey();
   late final WidgetStateController _widgetStateController;
-
-  @override
-  void initState() {
-    _widgetStateController = WidgetStateController(_key);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

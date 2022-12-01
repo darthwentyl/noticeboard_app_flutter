@@ -4,9 +4,6 @@ import 'package:noticeboard/datas/widget_states.dart';
 import 'package:noticeboard/layaout_elements/posts_table/home/posts_widget.dart';
 
 class WidgetStateController {
-  WidgetStateController(Key key) {
-    _stateWidgetMap = {EWidgetStates.posts: PostsWidget(key: key)};
-  }
   EWidgetStates _state = EWidgetStates.posts;
 
   late final Map<EWidgetStates, Widget> _stateWidgetMap;
@@ -25,5 +22,9 @@ class WidgetStateController {
         ? _stateWidgetMap[_state]
         : const Text('State will be added',
             style: TextStyle(fontSize: 16.0, color: Colors.red));
+  }
+
+  registerWidget(EWidgetStates state, Widget widget) {
+    _stateWidgetMap[state] = widget;
   }
 }

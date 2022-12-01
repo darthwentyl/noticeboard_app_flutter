@@ -2,6 +2,7 @@ import 'package:badges/badges.dart' as badge;
 import 'package:flutter/material.dart';
 import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_icons.dart';
+import 'package:noticeboard/utils/empty_size_box.dart';
 
 class MainPostsAppBar {
   build(BuildContext context) {
@@ -13,11 +14,11 @@ class MainPostsAppBar {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           _getUserAvatar(context),
-          _emptySizedBox(),
+          EmptySizeBox.get(width: 10.0),
           _getUserName(),
           const Spacer(),
           _getBellIcon(),
-          _emptySizedBox(),
+          EmptySizeBox.get(width: 10.0),
         ],
       ),
     );
@@ -42,12 +43,6 @@ class MainPostsAppBar {
         fontSize: 20.0, // TODO: Is it circle avatar radius?
         decoration: TextDecoration.none,
       ),
-    );
-  }
-
-  _emptySizedBox() {
-    return const SizedBox(
-      width: 10.0,
     );
   }
 
