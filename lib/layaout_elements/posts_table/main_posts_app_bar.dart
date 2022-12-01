@@ -2,9 +2,15 @@ import 'package:badges/badges.dart' as badge;
 import 'package:flutter/material.dart';
 import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_icons.dart';
+import 'package:noticeboard/datas/callback_types.dart';
+import 'package:noticeboard/datas/widget_states.dart';
 import 'package:noticeboard/utils/empty_size_box.dart';
 
 class MainPostsAppBar {
+  MainPostsAppBar(this._setStateCallback);
+
+  VoidCallback<EWidgetStates> _setStateCallback;
+
   build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.mainBackground,
@@ -47,17 +53,25 @@ class MainPostsAppBar {
   }
 
   _getBellIcon() {
-    return badge.Badge(
-      position: badge.BadgePosition.topEnd(top: -15, end: -15),
-      badgeContent: const Text(
-        '+99',
-        style: TextStyle(
-          color: AppColors.customWhite,
-          fontSize: 10.0, // TODO: Is it circle avatar radius?
-          decoration: TextDecoration.none,
+    return InkWell(
+      child: badge.Badge(
+        position: badge.BadgePosition.topEnd(top: -15, end: -15),
+        badgeContent: const Text(
+          '+99',
+          style: TextStyle(
+            color: AppColors.customWhite,
+            fontSize: 10.0, // TODO: Is it circle avatar radius?
+            decoration: TextDecoration.none,
+          ),
         ),
+        shape: badge.BadgeShape.square,
+        padding: const EdgeInsets.all(1.0),
+        borderRadius: BorderRadius.circular(4.0),
+        child: AppIcons.bell,
       ),
-      child: AppIcons.bell,
+      onTap: () {
+        _setStateCallback(EWidgetStates.bell);
+      },
     );
   }
 }

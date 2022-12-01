@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/controllers/posts_controller.dart';
 import 'package:noticeboard/datas/post.dart';
 import 'package:noticeboard/layaout_elements/loading_widget.dart';

@@ -10,7 +10,7 @@ import 'package:noticeboard/utils/get_initials.dart';
 import 'package:noticeboard/utils/size_getter.dart';
 
 class PostListViewItem extends StatelessWidget {
-  PostListViewItem({required this.post});
+  PostListViewItem({Key? key, required this.post}) : super(key: key);
 
   Post post;
 

@@ -7,10 +7,11 @@ import 'package:noticeboard/datas/widget_states.dart';
 import 'package:noticeboard/utils/size_getter.dart';
 
 class Categories extends StatelessWidget {
-  Categories(this.callback, this._currState, {Key? key}) : super(key: key);
+  Categories(this._setStateCallback, this._currState, {Key? key})
+      : super(key: key);
 
   static const spacing = 6.0;
-  VoidCallback<EWidgetStates> callback;
+  VoidCallback<EWidgetStates> _setStateCallback;
   EWidgetStates _currState;
 
   @override
@@ -61,7 +62,7 @@ class Categories extends StatelessWidget {
         padding: const EdgeInsets.all(spacing),
       ),
       onPressed: () {
-        callback(state);
+        _setStateCallback(state);
       },
       child: Text(
         text,
@@ -78,7 +79,7 @@ class Categories extends StatelessWidget {
         padding: const EdgeInsets.all(spacing),
       ),
       onPressed: () {
-        callback(state);
+        _setStateCallback(state);
       },
       child: Text(
         text,
