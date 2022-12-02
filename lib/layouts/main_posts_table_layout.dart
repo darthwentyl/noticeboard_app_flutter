@@ -7,6 +7,7 @@ import 'package:noticeboard/layaout_elements/posts_table/bell/notification_widge
 import 'package:noticeboard/layaout_elements/posts_table/categories.dart';
 import 'package:noticeboard/layaout_elements/posts_table/home/posts_widget.dart';
 import 'package:noticeboard/layaout_elements/posts_table/home/promotion_widget.dart';
+import 'package:noticeboard/layaout_elements/posts_table/home/vip_widget.dart';
 import 'package:noticeboard/layaout_elements/posts_table/main_posts_app_bar.dart';
 import 'package:noticeboard/layaout_elements/posts_table/main_posts_navigation_bar.dart';
 import 'package:noticeboard/utils/empty_size_box.dart';
@@ -32,6 +33,8 @@ class _MainPostsTableLayout extends State<MainPostsTableLayout> {
         EWidgetStates.contest,
         PromotionWidget(
             promotionTypes: EPromotionTypes.contest, key: UniqueKey()));
+    _widgetStateController.registerWidget(
+        EWidgetStates.vip, VipWidget(key: UniqueKey()));
     _widgetStateController.registerWidget(
         EWidgetStates.bell, NotificationWidget(key: UniqueKey()));
   }
