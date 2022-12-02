@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:noticeboard/controllers/posts_controller.dart';
 import 'package:noticeboard/datas/post.dart';
-import 'package:noticeboard/datas/post_type.dart';
+import 'package:noticeboard/datas/post_types.dart';
 import 'package:noticeboard/layaout_elements/loading_widget.dart';
 import 'package:noticeboard/layaout_elements/posts_table/home/post_list_view_item.dart';
 import 'package:noticeboard/utils/size_getter.dart';
@@ -9,7 +9,7 @@ import 'package:noticeboard/utils/size_getter.dart';
 class PostsWidget extends StatefulWidget {
   PostsWidget({required this.postType, Key? key}) : super(key: key);
 
-  final EPostType postType;
+  final EPostTypes postType;
 
   @override
   State<StatefulWidget> createState() {
@@ -18,7 +18,7 @@ class PostsWidget extends StatefulWidget {
 }
 
 class _PostsWidgetState extends State<PostsWidget> {
-  late EPostType _postType;
+  late EPostTypes _postType;
   late PostsController _postsController;
 
   List<Post> _posts = [];

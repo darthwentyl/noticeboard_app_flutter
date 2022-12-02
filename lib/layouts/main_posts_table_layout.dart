@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:noticeboard/controllers/widget_state_controller.dart';
-import 'package:noticeboard/datas/post_type.dart';
+import 'package:noticeboard/datas/post_types.dart';
+import 'package:noticeboard/datas/promotion_types.dart';
 import 'package:noticeboard/datas/widget_states.dart';
 import 'package:noticeboard/layaout_elements/posts_table/bell/notification_widget.dart';
 import 'package:noticeboard/layaout_elements/posts_table/categories.dart';
@@ -20,11 +21,17 @@ class MainPostsTableLayout extends StatefulWidget {
 class _MainPostsTableLayout extends State<MainPostsTableLayout> {
   _MainPostsTableLayout() {
     _widgetStateController.registerWidget(EWidgetStates.posts,
-        PostsWidget(postType: EPostType.post, key: UniqueKey()));
+        PostsWidget(postType: EPostTypes.post, key: UniqueKey()));
     _widgetStateController.registerWidget(EWidgetStates.buySell,
-        PostsWidget(postType: EPostType.buySell, key: UniqueKey()));
+        PostsWidget(postType: EPostTypes.buySell, key: UniqueKey()));
     _widgetStateController.registerWidget(
-        EWidgetStates.promotion, PromotionWidget(key: UniqueKey()));
+        EWidgetStates.promotion,
+        PromotionWidget(
+            promotionTypes: EPromotionTypes.promotion, key: UniqueKey()));
+    _widgetStateController.registerWidget(
+        EWidgetStates.contest,
+        PromotionWidget(
+            promotionTypes: EPromotionTypes.contest, key: UniqueKey()));
     _widgetStateController.registerWidget(
         EWidgetStates.bell, NotificationWidget(key: UniqueKey()));
   }

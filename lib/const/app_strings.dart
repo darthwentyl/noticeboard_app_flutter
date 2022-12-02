@@ -7,8 +7,9 @@ class AppStrings {
   static const String loading = "Ładuję dane";
   static const String comments = "Komentarze";
 
-  static const String promotionAnnouncement =
-      "Miejsce na Twoje promocje\ne-mail:";
+  static const String promotionInfo = "Miejsce na Twoje promocje\ne-mail:";
+
+  static const String contestInfo = "Miejsce na Twoje konkursy\ne-mail:";
 }
 
 class ButtonStrings {
