@@ -21,8 +21,6 @@ class ButtonStrings {
   static const String categoriesBuySell = "Kup/Sprzedaj";
   static const String categoriesPromotion = "Promocja";
   static const String categoriesContest = "Konkursy";
-  static const String categoriesVip = "Vip";
-  static const String categoriesInfo = "Info";
 }
 
 class ErrStrings {

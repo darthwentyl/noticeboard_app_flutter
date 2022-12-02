@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:noticeboard/const/app_colors.dart';
+import 'package:noticeboard/const/app_icons.dart';
 import 'package:noticeboard/const/app_strings.dart';
 import 'package:noticeboard/const/app_theme.dart';
 import 'package:noticeboard/datas/callback_types.dart';
@@ -38,8 +39,7 @@ class Categories extends StatelessWidget {
                       EWidgetStates.promotion),
                   _button(
                       ButtonStrings.categoriesContest, EWidgetStates.contest),
-                  _button(ButtonStrings.categoriesVip, EWidgetStates.vip),
-                  _button(ButtonStrings.categoriesInfo, EWidgetStates.info),
+                  _buttonWithIcon(AppIcons.diamond, EWidgetStates.vip),
                 ],
               ),
             ),
@@ -85,6 +85,38 @@ class Categories extends StatelessWidget {
         text,
         style: const TextStyle(fontSize: 16),
       ),
+    );
+  }
+
+  _buttonWithIcon(Icon icon, EWidgetStates state) {
+    return _currState == state
+        ? _selectButtonWithIcon(icon, state)
+        : _unselectButtonWithIcon(icon, state);
+  }
+
+  _selectButtonWithIcon(Icon icon, state) {
+    return TextButton(
+      style: TextButton.styleFrom(
+        backgroundColor: AppColors.textButtonSelectBackground,
+        padding: const EdgeInsets.all(spacing),
+      ),
+      onPressed: () {
+        _setStateCallback(state);
+      },
+      child: icon,
+    );
+  }
+
+  _unselectButtonWithIcon(Icon icon, state) {
+    return TextButton(
+      style: TextButton.styleFrom(
+        backgroundColor: AppColors.textButtonBackground,
+        padding: const EdgeInsets.all(spacing),
+      ),
+      onPressed: () {
+        _setStateCallback(state);
+      },
+      child: icon,
     );
   }
 }

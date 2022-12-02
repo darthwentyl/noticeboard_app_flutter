@@ -4,6 +4,5 @@ enum EWidgetStates {
   promotion,
   contest,
   vip,
-  info,
   bell,
 }

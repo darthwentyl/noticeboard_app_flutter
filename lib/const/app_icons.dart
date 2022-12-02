@@ -10,7 +10,7 @@ class AppIcons {
     IconData(0xF3E1,
         fontFamily: CupertinoIcons.iconFont,
         fontPackage: CupertinoIcons.iconFontPackage),
-    size: 20.0,
+    size: 24.0,
   );
   static const Icon heart = const Icon(
     IconData(0xf443,
@@ -25,5 +25,9 @@ class AppIcons {
     IconData(0xf4c4,
         fontFamily: CupertinoIcons.iconFont,
         fontPackage: CupertinoIcons.iconFontPackage),
+  );
+  static const Icon diamond = const Icon(
+    IconData(0xf05e7, fontFamily: 'MaterialIcons'),
+    color: Color(0xFFFFD700),
   );
 }
