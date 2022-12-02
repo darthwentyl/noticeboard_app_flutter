@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:noticeboard/controllers/widget_state_controller.dart';
+import 'package:noticeboard/datas/post_type.dart';
 import 'package:noticeboard/datas/widget_states.dart';
 import 'package:noticeboard/layaout_elements/posts_table/bell/notification_widget.dart';
 import 'package:noticeboard/layaout_elements/posts_table/categories.dart';
@@ -17,7 +18,9 @@ class MainPostsTableLayout extends StatefulWidget {
 class _MainPostsTableLayout extends State<MainPostsTableLayout> {
   _MainPostsTableLayout() {
     _widgetStateController.registerWidget(
-        EWidgetStates.posts, const PostsWidget());
+        EWidgetStates.posts, new PostsWidget(postType: EPostType.post));
+    _widgetStateController.registerWidget(
+        EWidgetStates.buySell, new PostsWidget(postType: EPostType.buySell));
     _widgetStateController.registerWidget(
         EWidgetStates.bell, const NotificationWidget());
   }

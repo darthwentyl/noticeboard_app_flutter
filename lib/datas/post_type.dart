@@ -1,0 +1,4 @@
+enum EPostType {
+  post,
+  buySell,
+}

@@ -1,1 +1,9 @@
-enum EWidgetStates { posts, buySell, advertisement, contest, vip, info, bell }
+enum EWidgetStates {
+  posts,
+  buySell,
+  advertisement,
+  contest,
+  vip,
+  info,
+  bell,
+}

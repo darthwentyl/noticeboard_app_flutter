@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "author": "Jan Kowalski",
+      "title": "Sprzedam kradziony samochód. Więcej pod numerem 666123456",
+      "likes": 3,
+      "comments": 5,
+      "image_url": "null"
+    },
+    {
+      "author": "Katarzyna Nowak",
+      "title": "Kupię narkotyki w każdej ilości!!! Kontakt pod mailem: kasia2002@buziaczek.pl",
+      "likes": 0,
+      "comments": 0,
+      "image_url": "null"
+    },
+    {
+      "author": "Władysław Jagiełło",
+      "title": "Wynajmę najemników na bitwę pod Grunwaldem. Zgłoszenia bezpośrednio pod adresem ul. Kazimierza Wielkiego 666",
+      "likes": 0,
+      "comments": 10,
+      "image_url": "null"
+    },
+    {
+      "author": "Anna Maria Jopek",
+      "title": "Sprzedam moje albumy, bo brakuje mi na wódkę :P Nr. 123456789",
+      "likes": 12,
+      "comments": 0,
+      "image_url": "null"
+    }
+  ]
+}

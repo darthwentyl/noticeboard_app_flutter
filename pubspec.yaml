@@ -69,6 +69,7 @@ flutter:
     - assets/icons/logo.svg
     - assets/jsons/questionnaire.json
     - assets/jsons/posts.json
+    - assets/jsons/buy_sell.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

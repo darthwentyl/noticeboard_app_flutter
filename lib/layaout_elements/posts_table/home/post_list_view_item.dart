@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:badges/badges.dart' as badge;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -82,11 +84,15 @@ class PostListViewItem extends StatelessWidget {
   }
 
   _image(BuildContext context) {
-    return SvgPicture.asset(
-      'assets/icons/logo.svg',
-      width: SizeGetter.width(context, 96.0),
-      height: SizeGetter.height(context, 25.0),
-    );
+    // TODO: the image should be taken from DB
+    if (Random().nextBool()) {
+      return SvgPicture.asset(
+        'assets/icons/logo.svg',
+        width: SizeGetter.width(context, 96.0),
+        height: SizeGetter.height(context, 25.0),
+      );
+    }
+    return const SizedBox.shrink();
   }
 
   _otherInfo() {

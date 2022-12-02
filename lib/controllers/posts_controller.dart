@@ -2,8 +2,13 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:noticeboard/datas/post.dart';
+import 'package:noticeboard/datas/post_type.dart';
 
 class PostsController {
+  PostsController(this.postType);
+
+  EPostType postType;
+
   Future<List<Post>> getPosts() async {
     String postsJsonText = await _getPostJson();
     var postsObjJson = jsonDecode(postsJsonText)['posts'] as List;
@@ -15,6 +20,10 @@ class PostsController {
   }
 
   Future<String> _getPostJson() async {
-    return await rootBundle.loadString('assets/jsons/posts.json');
+    if (postType == EPostType.post) {
+      return await rootBundle.loadString('assets/jsons/posts.json');
+    } else {
+      return await rootBundle.loadString('assets/jsons/buy_sell.json');
+    }
   }
 }
