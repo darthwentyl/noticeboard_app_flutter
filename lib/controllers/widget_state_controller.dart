@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:noticeboard/datas/widget_states.dart';
-import 'package:noticeboard/layaout_elements/posts_table/home/posts_widget.dart';
 
 class WidgetStateController {
   EWidgetStates _state = EWidgetStates.posts;
@@ -18,6 +16,7 @@ class WidgetStateController {
   }
 
   getWidget() {
+    print("getWidget(): _state: $_state");
     return _stateWidgetMap[_state] ??
         const Text('State will be added',
             style: TextStyle(fontSize: 16.0, color: Colors.red));

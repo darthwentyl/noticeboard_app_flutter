@@ -1,7 +1,7 @@
 enum EWidgetStates {
   posts,
   buySell,
-  advertisement,
+  promotion,
   contest,
   vip,
   info,

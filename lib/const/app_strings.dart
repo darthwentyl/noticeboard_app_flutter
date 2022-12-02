@@ -6,6 +6,9 @@ class AppStrings {
 
   static const String loading = "Ładuję dane";
   static const String comments = "Komentarze";
+
+  static const String promotionAnnouncement =
+      "Miejsce na Twoje promocje\ne-mail:";
 }
 
 class ButtonStrings {
@@ -15,7 +18,7 @@ class ButtonStrings {
 
   static const String categoriesPost = "Post";
   static const String categoriesBuySell = "Kup/Sprzedaj";
-  static const String categoriesAdvertisement = "Reklama";
+  static const String categoriesPromotion = "Promocja";
   static const String categoriesContest = "Konkursy";
   static const String categoriesVip = "Vip";
   static const String categoriesInfo = "Info";

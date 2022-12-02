@@ -7,12 +7,12 @@ import 'package:noticeboard/datas/widget_states.dart';
 import 'package:noticeboard/utils/size_getter.dart';
 
 class Categories extends StatelessWidget {
-  Categories(this._setStateCallback, this._currState, {Key? key})
+  const Categories(this._setStateCallback, this._currState, {Key? key})
       : super(key: key);
 
   static const spacing = 6.0;
-  VoidCallback<EWidgetStates> _setStateCallback;
-  EWidgetStates _currState;
+  final VoidCallback<EWidgetStates> _setStateCallback;
+  final EWidgetStates _currState;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class Categories extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(BoxTheme.radius)),
         ),
         child: Center(
-          child: Container(
+          child: SizedBox(
             width: SizeGetter.width(context, 95.0),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -34,8 +34,8 @@ class Categories extends StatelessWidget {
                   _button(ButtonStrings.categoriesPost, EWidgetStates.posts),
                   _button(
                       ButtonStrings.categoriesBuySell, EWidgetStates.buySell),
-                  _button(ButtonStrings.categoriesAdvertisement,
-                      EWidgetStates.advertisement),
+                  _button(ButtonStrings.categoriesPromotion,
+                      EWidgetStates.promotion),
                   _button(
                       ButtonStrings.categoriesContest, EWidgetStates.contest),
                   _button(ButtonStrings.categoriesVip, EWidgetStates.vip),

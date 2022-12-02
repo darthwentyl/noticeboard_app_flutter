@@ -7,7 +7,7 @@ import 'package:noticeboard/layaout_elements/posts_table/home/post_list_view_ite
 import 'package:noticeboard/utils/size_getter.dart';
 
 class PostsWidget extends StatefulWidget {
-  const PostsWidget({required this.postType, Key? key}) : super(key: key);
+  PostsWidget({required this.postType, Key? key}) : super(key: key);
 
   final EPostType postType;
 
@@ -27,7 +27,7 @@ class _PostsWidgetState extends State<PostsWidget> {
   @override
   void initState() {
     _postType = widget.postType;
-    _postsController = PostsController(_postType);
+    _postsController = new PostsController(_postType);
     _postsController.getPosts().then((value) {
       setState(() {
         _posts = value;

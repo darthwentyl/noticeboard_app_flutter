@@ -5,8 +5,10 @@ import 'package:noticeboard/datas/widget_states.dart';
 import 'package:noticeboard/layaout_elements/posts_table/bell/notification_widget.dart';
 import 'package:noticeboard/layaout_elements/posts_table/categories.dart';
 import 'package:noticeboard/layaout_elements/posts_table/home/posts_widget.dart';
+import 'package:noticeboard/layaout_elements/posts_table/home/promotion_widget.dart';
 import 'package:noticeboard/layaout_elements/posts_table/main_posts_app_bar.dart';
 import 'package:noticeboard/layaout_elements/posts_table/main_posts_navigation_bar.dart';
+import 'package:noticeboard/utils/empty_size_box.dart';
 
 class MainPostsTableLayout extends StatefulWidget {
   const MainPostsTableLayout({Key? key}) : super(key: key);
@@ -17,12 +19,14 @@ class MainPostsTableLayout extends StatefulWidget {
 
 class _MainPostsTableLayout extends State<MainPostsTableLayout> {
   _MainPostsTableLayout() {
+    _widgetStateController.registerWidget(EWidgetStates.posts,
+        PostsWidget(postType: EPostType.post, key: UniqueKey()));
+    _widgetStateController.registerWidget(EWidgetStates.buySell,
+        PostsWidget(postType: EPostType.buySell, key: UniqueKey()));
     _widgetStateController.registerWidget(
-        EWidgetStates.posts, new PostsWidget(postType: EPostType.post));
+        EWidgetStates.promotion, PromotionWidget(key: UniqueKey()));
     _widgetStateController.registerWidget(
-        EWidgetStates.buySell, new PostsWidget(postType: EPostType.buySell));
-    _widgetStateController.registerWidget(
-        EWidgetStates.bell, const NotificationWidget());
+        EWidgetStates.bell, NotificationWidget(key: UniqueKey()));
   }
 
   int _selectedBottomNavigationItem = 0;
@@ -36,7 +40,9 @@ class _MainPostsTableLayout extends State<MainPostsTableLayout> {
       body: Column(
         children: [
           Categories(_onSetWidgetState, _widgetStateController.getState()),
+          EmptySizeBox.get(height: 5.0),
           _widgetStateController.getWidget(),
+          EmptySizeBox.get(height: 5.0),
         ],
       ),
       bottomNavigationBar: MainPostsNavigationBar(

@@ -7,6 +7,7 @@ import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_icons.dart';
 import 'package:noticeboard/const/app_strings.dart';
 import 'package:noticeboard/const/app_theme.dart';
+import 'package:noticeboard/controllers/db_image_controller.dart';
 import 'package:noticeboard/datas/post.dart';
 import 'package:noticeboard/utils/get_initials.dart';
 import 'package:noticeboard/utils/size_getter.dart';
@@ -15,6 +16,7 @@ class PostListViewItem extends StatelessWidget {
   PostListViewItem({Key? key, required this.post}) : super(key: key);
 
   Post post;
+  DbImageController dbImageController = DbImageController();
 
   @override
   Widget build(BuildContext context) {
@@ -85,14 +87,8 @@ class PostListViewItem extends StatelessWidget {
 
   _image(BuildContext context) {
     // TODO: the image should be taken from DB
-    if (Random().nextBool()) {
-      return SvgPicture.asset(
-        'assets/icons/logo.svg',
-        width: SizeGetter.width(context, 96.0),
-        height: SizeGetter.height(context, 25.0),
-      );
-    }
-    return const SizedBox.shrink();
+    return dbImageController.getImage('assets/icons/logo.svg') ??
+        const SizedBox.shrink();
   }
 
   _otherInfo() {
