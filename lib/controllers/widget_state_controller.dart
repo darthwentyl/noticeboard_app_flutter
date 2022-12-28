@@ -18,7 +18,7 @@ class WidgetStateController {
   getWidget() {
     print("getWidget(): _state: $_state");
     return _stateWidgetMap[_state] ??
-        const Text('State will be added',
+        Text('State $_state will be added',
             style: TextStyle(fontSize: 16.0, color: Colors.red));
   }
 

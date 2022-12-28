@@ -41,9 +41,9 @@ class PromotionWidget extends StatelessWidget {
 
   _getPromotion() {
     if (promotionTypes == EPromotionTypes.promotion) {
-      return dbImageController.getImage('assets/example/cafe_promotion.svg');
+      return dbImageController.getImage('assets/example/post_1.png');
     } else {
-      return dbImageController.getImage('assets/example/cafe_contest.svg');
+      return dbImageController.getImage('assets/example/reklama.png');
     }
   }
 }
