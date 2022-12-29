@@ -27,7 +27,7 @@ class _PostsWidgetState extends State<PostsWidget> {
   @override
   void initState() {
     _postType = widget.postType;
-    _postsController = new PostsController(_postType);
+    _postsController = PostsController(_postType);
     _postsController.getPosts().then((value) {
       setState(() {
         _posts = value;

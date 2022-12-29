@@ -97,7 +97,7 @@ class PostListViewItem extends StatelessWidget {
         badge.Badge(
           position: badge.BadgePosition.bottomEnd(bottom: 0, end: 0),
           badgeContent: Text(
-            '${post.likes}',
+            '${post.emotion.likes}',
             style: const TextStyle(
               color: AppColors.customWhite,
               fontSize: 10.0,
@@ -108,6 +108,7 @@ class PostListViewItem extends StatelessWidget {
             color: AppColors.heartColorIcon,
             icon: AppIcons.heart,
             onPressed: () {
+              // TODO: implements action
               print("Heart clicked");
             },
           ),
@@ -135,21 +136,10 @@ class PostListViewItem extends StatelessWidget {
                 borderRadius:
                     BorderRadius.all(Radius.circular(BoxTheme.radius)),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Row(
-                  children: const [
-                    Text(
-                      AppStrings.comments,
-                      style: TextStyle(
-                          fontSize: 10.0, color: AppColors.customWhite),
-                    ),
-                    AppIcons.comment,
-                  ],
-                ),
-              ),
+              child: AppIcons.comment,
             ),
             onTap: () {
+              // TODO: implements action
               print("Comment clicked");
             },
           ),

@@ -1,14 +1,15 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:noticeboard/datas/emotion.dart';
 
 part 'post.g.dart';
 
 @JsonSerializable()
 class Post {
-  Post(this.author, this.title, this.likes, this.comments, this.image_url);
+  Post(this.author, this.title, this.emotion, this.comments, this.image_url);
 
   final String author;
   final String title;
-  final int likes;
+  final Emotion emotion;
   final int comments;
   final String image_url;
 
@@ -17,6 +18,6 @@ class Post {
 
   @override
   String toString() {
-    return 'author: $author; likes: $likes; comments: $comments; image_url: $image_url';
+    return 'author: $author; emotion: $emotion; comments: $comments; image_url: $image_url';
   }
 }
