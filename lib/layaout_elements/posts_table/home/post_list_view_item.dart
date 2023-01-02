@@ -1,16 +1,12 @@
-import 'dart:math';
-
-import 'package:badges/badges.dart' as badge;
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:noticeboard/const/app_colors.dart';
 import 'package:noticeboard/const/app_icons.dart';
-import 'package:noticeboard/const/app_strings.dart';
 import 'package:noticeboard/const/app_theme.dart';
 import 'package:noticeboard/controllers/db_image_controller.dart';
 import 'package:noticeboard/datas/post.dart';
+import 'package:noticeboard/layaout_elements/posts_table/home/emotions_row.dart';
+import 'package:noticeboard/utils/empty_size_box.dart';
 import 'package:noticeboard/utils/get_initials.dart';
-import 'package:noticeboard/utils/size_getter.dart';
 
 class PostListViewItem extends StatelessWidget {
   PostListViewItem({Key? key, required this.post}) : super(key: key);
@@ -31,7 +27,9 @@ class PostListViewItem extends StatelessWidget {
           children: [
             _userName(),
             _title(),
+            EmptySizeBox.get(height: 15.0),
             _image(context),
+            EmptySizeBox.get(height: 15.0),
             _otherInfo(),
           ],
         ),
@@ -92,59 +90,6 @@ class PostListViewItem extends StatelessWidget {
   }
 
   _otherInfo() {
-    return Row(
-      children: [
-        badge.Badge(
-          position: badge.BadgePosition.bottomEnd(bottom: 0, end: 0),
-          badgeContent: Text(
-            '${post.emotion.likes}',
-            style: const TextStyle(
-              color: AppColors.customWhite,
-              fontSize: 10.0,
-              decoration: TextDecoration.none,
-            ),
-          ),
-          child: IconButton(
-            color: AppColors.heartColorIcon,
-            icon: AppIcons.heart,
-            onPressed: () {
-              // TODO: implements action
-              print("Heart clicked");
-            },
-          ),
-        ),
-        const Spacer(),
-        badge.Badge(
-          badgeColor: AppColors.customBlue,
-          shape: badge.BadgeShape.square,
-          borderRadius: BorderRadius.circular(2.0),
-          padding: const EdgeInsets.all(0.0),
-          position: badge.BadgePosition.bottomStart(start: 0, bottom: -2.0),
-          badgeContent: Text(
-            '${post.comments}',
-            textAlign: TextAlign.left,
-            style: const TextStyle(
-              color: AppColors.customWhite,
-              fontSize: 10.0,
-              decoration: TextDecoration.none,
-            ),
-          ),
-          child: InkWell(
-            child: Container(
-              decoration: const BoxDecoration(
-                color: AppColors.textButtonBackground,
-                borderRadius:
-                    BorderRadius.all(Radius.circular(BoxTheme.radius)),
-              ),
-              child: AppIcons.comment,
-            ),
-            onTap: () {
-              // TODO: implements action
-              print("Comment clicked");
-            },
-          ),
-        ),
-      ],
-    );
+    return EmotionsRow(post: post, key: UniqueKey());
   }
 }

@@ -71,11 +71,11 @@ flutter:
     - assets/example/post_2.png
     - assets/example/reklama.png
     - assets/icons/logo.svg
-    - assets/icons/Color/1_Like_Color.svg
-    - assets/icons/Color/2_Love_Color.svg
-    - assets/icons/Color/3_Haha_Color.svg
-    - assets/icons/Color/4_Angry_Color.svg
-    - assets/icons/Color/5_Random_Color.svg
+    - assets/icons/Color/LikeColor.svg
+    - assets/icons/Color/LoveColor.svg
+    - assets/icons/Color/HahaColor.svg
+    - assets/icons/Color/AngryColor.svg
+    - assets/icons/Color/RandomColor.svg
     - assets/jsons/questionnaire.json
     - assets/jsons/posts.json
     - assets/jsons/buy_sell.json

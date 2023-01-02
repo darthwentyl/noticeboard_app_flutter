@@ -33,7 +33,7 @@ class _AuthenticationLayoutState extends State<AuthenticationLayout> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             EmptySizeBox.get(height: 16.0),
-            _houseEmoji(5.0),
+            _houseEmoji(),
             EmptySizeBox.get(height: 16.0),
             _chooseAuthButton(),
             EmptySizeBox.get(height: 16.0),
@@ -43,7 +43,7 @@ class _AuthenticationLayoutState extends State<AuthenticationLayout> {
     );
   }
 
-  _houseEmoji(double borderWidth) {
+  _houseEmoji() {
     return Center(
       child: SvgPicture.asset(
         'assets/icons/logo.svg',
