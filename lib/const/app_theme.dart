@@ -12,6 +12,7 @@ class AppTheme {
 
 class BoxTheme {
   static const double radius = 11.0;
+  static const double buttonRadius = 5.0;
 }
 
 class CustomTextTheme {

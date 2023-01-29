@@ -31,6 +31,7 @@ class PostListViewItem extends StatelessWidget {
             _image(context),
             EmptySizeBox.get(height: 15.0),
             _otherInfo(),
+            EmptySizeBox.get(height: 15.0),
           ],
         ),
         onTap: () {

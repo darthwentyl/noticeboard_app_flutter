@@ -18,9 +18,9 @@ class ButtonStrings {
   static const String no = "Nie";
 
   static const String categoriesPost = "Post";
-  static const String categoriesBuySell = "Kup/Sprzedaj";
-  static const String categoriesPromotion = "Promocja";
-  static const String categoriesContest = "Konkursy";
+  static const String categoriesBuySell = "Buy/Sell";
+  static const String categoriesPromotion = "Promo";
+  static const String categoriesContest = "Event";
 }
 
 class ErrStrings {

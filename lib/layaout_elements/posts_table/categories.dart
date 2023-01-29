@@ -27,21 +27,20 @@ class Categories extends StatelessWidget {
         child: Center(
           child: SizedBox(
             width: SizeGetter.width(context, 95.0),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Wrap(
-                spacing: spacing,
-                children: [
-                  _button(ButtonStrings.categoriesPost, EWidgetStates.posts),
-                  _button(
-                      ButtonStrings.categoriesBuySell, EWidgetStates.buySell),
-                  _button(ButtonStrings.categoriesPromotion,
-                      EWidgetStates.promotion),
-                  _button(
-                      ButtonStrings.categoriesContest, EWidgetStates.contest),
-                  _buttonWithIcon(AppIcons.diamond, EWidgetStates.vip),
-                ],
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _button(ButtonStrings.categoriesPost, EWidgetStates.posts),
+                const Spacer(),
+                _button(ButtonStrings.categoriesBuySell, EWidgetStates.buySell),
+                const Spacer(),
+                _button(
+                    ButtonStrings.categoriesPromotion, EWidgetStates.promotion),
+                const Spacer(),
+                _button(ButtonStrings.categoriesContest, EWidgetStates.contest),
+                const Spacer(),
+                _buttonWithIcon(AppIcons.diamond, EWidgetStates.vip),
+              ],
             ),
           ),
         ),

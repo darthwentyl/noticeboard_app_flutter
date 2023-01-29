@@ -28,14 +28,13 @@ class EmotionsRow extends StatelessWidget {
         _getBadge(EEmotion.randomColor),
         const Spacer(),
         badge.Badge(
-          badgeColor: AppColors.customBlue,
+          badgeColor: AppColors.badgeBackground,
+          elevation: 0,
           shape: badge.BadgeShape.square,
-          borderRadius: BorderRadius.circular(2.0),
-          padding: const EdgeInsets.all(0.0),
-          // position: badge.BadgePosition.bottomStart(start: 0, bottom: -2.0),
+          position: const badge.BadgePosition(bottom: -22),
           badgeContent: Text(
             '${post.comments}',
-            textAlign: TextAlign.left,
+            textAlign: TextAlign.center,
             style: const TextStyle(
               color: AppColors.customWhite,
               fontSize: 10.0,
@@ -43,13 +42,17 @@ class EmotionsRow extends StatelessWidget {
             ),
           ),
           child: InkWell(
-            child: Container(
-              decoration: const BoxDecoration(
-                color: AppColors.textButtonBackground,
-                borderRadius:
-                    BorderRadius.all(Radius.circular(BoxTheme.radius)),
+            child: SizedBox(
+              height: 30.0,
+              width: 30.0,
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: AppColors.textButtonBackground,
+                  borderRadius:
+                      BorderRadius.all(Radius.circular(BoxTheme.buttonRadius)),
+                ),
+                child: AppIcons.comment,
               ),
-              child: AppIcons.comment,
             ),
             onTap: () {
               // TODO: implements action
@@ -57,16 +60,20 @@ class EmotionsRow extends StatelessWidget {
             },
           ),
         ),
-        EmptySizeBox.get(width: 30),
+        EmptySizeBox.get(width: 20),
       ],
     );
   }
 
   _getBadge(EEmotion emotion) {
     return badge.Badge(
-      // position: badge.BadgePosition.bottomEnd(bottom: -8, end: -12),
+      badgeColor: AppColors.badgeBackground,
+      elevation: 0,
+      shape: badge.BadgeShape.square,
+      position: const badge.BadgePosition(bottom: -22),
       badgeContent: Text(
         _getEmotionNum(emotion),
+        textAlign: TextAlign.center,
         style: const TextStyle(
           color: AppColors.customWhite,
           fontSize: 10.0,

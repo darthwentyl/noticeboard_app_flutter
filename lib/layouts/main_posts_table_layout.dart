@@ -50,9 +50,9 @@ class _MainPostsTableLayout extends State<MainPostsTableLayout> {
       body: Column(
         children: [
           Categories(_onSetWidgetState, _widgetStateController.getState()),
-          EmptySizeBox.get(height: 5.0),
+          EmptySizeBox.get(height: 15.0),
           _widgetStateController.getWidget(),
-          EmptySizeBox.get(height: 5.0),
+          EmptySizeBox.get(height: 15.0),
         ],
       ),
       bottomNavigationBar: MainPostsNavigationBar(
