@@ -8,15 +8,18 @@ import 'package:noticeboard/datas/widget_states.dart';
 import 'package:noticeboard/utils/size_getter.dart';
 
 class Categories extends StatelessWidget {
-  const Categories(this._setStateCallback, this._currState, {Key? key})
+  Categories(this._setStateCallback, this._currState, {Key? key})
       : super(key: key);
 
   static const spacing = 6.0;
+  static const buttonProportion = 5.0;
   final VoidCallback<EWidgetStates> _setStateCallback;
   final EWidgetStates _currState;
+  late double _width;
 
   @override
   Widget build(BuildContext context) {
+    _width = SizeGetter.width(context, 95.0);
     return Center(
       child: Container(
         width: SizeGetter.width(context, 98.0),
@@ -26,7 +29,8 @@ class Categories extends StatelessWidget {
         ),
         child: Center(
           child: SizedBox(
-            width: SizeGetter.width(context, 95.0),
+            // width: SizeGetter.width(context, 95.0),
+            width: _width,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -59,6 +63,7 @@ class Categories extends StatelessWidget {
       style: TextButton.styleFrom(
         backgroundColor: AppColors.textButtonSelectBackground,
         padding: const EdgeInsets.all(spacing),
+        fixedSize: Size.fromWidth(_width / buttonProportion),
       ),
       onPressed: () {
         _setStateCallback(state);
@@ -76,6 +81,7 @@ class Categories extends StatelessWidget {
       style: TextButton.styleFrom(
         backgroundColor: AppColors.textButtonBackground,
         padding: const EdgeInsets.all(spacing),
+        fixedSize: Size.fromWidth(_width / buttonProportion),
       ),
       onPressed: () {
         _setStateCallback(state);
@@ -94,28 +100,34 @@ class Categories extends StatelessWidget {
   }
 
   _selectButtonWithIcon(Icon icon, state) {
-    return TextButton(
-      style: TextButton.styleFrom(
-        backgroundColor: AppColors.textButtonSelectBackground,
-        padding: const EdgeInsets.all(spacing),
+    return SizedBox.square(
+      dimension: 36,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          backgroundColor: AppColors.textButtonSelectBackground,
+          padding: const EdgeInsets.all(spacing),
+        ),
+        onPressed: () {
+          _setStateCallback(state);
+        },
+        child: icon,
       ),
-      onPressed: () {
-        _setStateCallback(state);
-      },
-      child: icon,
     );
   }
 
   _unselectButtonWithIcon(Icon icon, state) {
-    return TextButton(
-      style: TextButton.styleFrom(
-        backgroundColor: AppColors.textButtonBackground,
-        padding: const EdgeInsets.all(spacing),
+    return SizedBox.square(
+      dimension: 36,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          backgroundColor: AppColors.textButtonBackground,
+          padding: const EdgeInsets.all(spacing),
+        ),
+        onPressed: () {
+          _setStateCallback(state);
+        },
+        child: icon,
       ),
-      onPressed: () {
-        _setStateCallback(state);
-      },
-      child: icon,
     );
   }
 }
