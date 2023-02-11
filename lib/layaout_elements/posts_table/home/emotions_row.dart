@@ -43,13 +43,14 @@ class EmotionsRow extends StatelessWidget {
           ),
           child: InkWell(
             child: SizedBox(
-              height: 30.0,
-              width: 30.0,
+              height: 32.0,
+              width: 32.0,
               child: Container(
                 decoration: const BoxDecoration(
                   color: AppColors.textButtonBackground,
-                  borderRadius:
-                      BorderRadius.all(Radius.circular(BoxTheme.buttonRadius)),
+                  shape: BoxShape.circle,
+                  // borderRadius:
+                  //     BorderRadius.all(Radius.circular(BoxTheme.buttonRadius)),
                 ),
                 child: AppIcons.comment,
               ),
@@ -82,8 +83,8 @@ class EmotionsRow extends StatelessWidget {
       ),
       child: InkWell(
         child: SizedBox(
-          height: 30.0,
-          width: 30.0,
+          height: 32.0,
+          width: 32.0,
           child: SvgPicture.asset(
             EmotionNameGetter().getEmotionAsset(emotion),
           ),

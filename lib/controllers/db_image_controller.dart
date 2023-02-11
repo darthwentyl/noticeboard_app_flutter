@@ -7,12 +7,25 @@ class DbImageController {
     // TODO: it should be taken from db
     if (Random().nextBool()) {
       if (url.split('.').last == "png") {
-        return Image.asset(
-          url,
+        return Container(
+          color: Colors.red,
+          child: AspectRatio(
+            aspectRatio: 16 / 9,
+            child: Image(
+              image: AssetImage(url),
+              fit: BoxFit.fill,
+            ),
+          ),
         );
       } else {
-        return SvgPicture.asset(
-          url,
+        return Container(
+          color: Colors.red,
+          child: AspectRatio(
+            aspectRatio: 16 / 9,
+            child: SvgPicture.asset(
+              url,
+            ),
+          ),
         );
       }
     }

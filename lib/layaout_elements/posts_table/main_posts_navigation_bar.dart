@@ -23,6 +23,9 @@ class MainPostsNavigationBar extends StatelessWidget {
       backgroundColor: AppColors.bottomNavigationBarBackground,
       unselectedItemColor: AppColors.bottomNavigationBarUnselect,
       selectedItemColor: AppColors.bottomNavigationBarSelect,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      iconSize: 32.0,
       currentIndex: _currentIdx,
       onTap: (int idx) {
         _onTapCallback(idx);
