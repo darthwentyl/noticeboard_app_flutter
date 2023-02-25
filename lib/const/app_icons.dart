@@ -18,7 +18,7 @@ class AppIcons {
         fontPackage: CupertinoIcons.iconFontPackage),
   );
   static const Icon comment = const Icon(
-    IconData(0xee41, fontFamily: 'MaterialIcons'),
+    IconData(0xe3f2, fontFamily: 'MaterialIcons'),
     color: AppColors.customBlue,
   );
   static const Icon trash = const Icon(

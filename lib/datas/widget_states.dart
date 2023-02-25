@@ -5,4 +5,7 @@ enum EWidgetStates {
   contest,
   vip,
   bell,
+  addPost,
+  home,
+  user
 }

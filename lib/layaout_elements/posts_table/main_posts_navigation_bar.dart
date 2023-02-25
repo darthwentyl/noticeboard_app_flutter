@@ -22,11 +22,13 @@ class MainPostsNavigationBar extends StatelessWidget {
       ],
       backgroundColor: AppColors.bottomNavigationBarBackground,
       unselectedItemColor: AppColors.bottomNavigationBarUnselect,
-      selectedItemColor: AppColors.bottomNavigationBarSelect,
+      selectedItemColor: _currentIdx == -1
+          ? AppColors.bottomNavigationBarUnselect
+          : AppColors.bottomNavigationBarSelect,
       showSelectedLabels: false,
       showUnselectedLabels: false,
       iconSize: 32.0,
-      currentIndex: _currentIdx,
+      currentIndex: _currentIdx == -1 ? 0 : _currentIdx,
       onTap: (int idx) {
         _onTapCallback(idx);
       },

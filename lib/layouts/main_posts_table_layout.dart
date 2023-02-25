@@ -3,6 +3,7 @@ import 'package:noticeboard/controllers/widget_state_controller.dart';
 import 'package:noticeboard/datas/post_types.dart';
 import 'package:noticeboard/datas/promotion_types.dart';
 import 'package:noticeboard/datas/widget_states.dart';
+import 'package:noticeboard/layaout_elements/posts_table/add_post/add_post_widget.dart';
 import 'package:noticeboard/layaout_elements/posts_table/bell/notification_widget.dart';
 import 'package:noticeboard/layaout_elements/posts_table/categories.dart';
 import 'package:noticeboard/layaout_elements/posts_table/home/posts_widget.dart';
@@ -37,6 +38,8 @@ class _MainPostsTableLayout extends State<MainPostsTableLayout> {
         EWidgetStates.vip, VipWidget(key: UniqueKey()));
     _widgetStateController.registerWidget(
         EWidgetStates.bell, NotificationWidget(key: UniqueKey()));
+    _widgetStateController.registerWidget(
+        EWidgetStates.addPost, AddPostWidget(key: UniqueKey()));
   }
 
   int _selectedBottomNavigationItem = 0;
@@ -49,7 +52,8 @@ class _MainPostsTableLayout extends State<MainPostsTableLayout> {
       appBar: MainPostsAppBar(_onSetWidgetState).build(context),
       body: Column(
         children: [
-          Categories(_onSetWidgetState, _widgetStateController.getState()),
+          if (_isShowCategories())
+            Categories(_onSetWidgetState, _widgetStateController.getState()),
           EmptySizeBox.get(height: 15.0),
           _widgetStateController.getWidget(),
           EmptySizeBox.get(height: 15.0),
@@ -63,12 +67,39 @@ class _MainPostsTableLayout extends State<MainPostsTableLayout> {
   void _onSelectBottomNavigationItem(int idx) {
     setState(() {
       _selectedBottomNavigationItem = idx;
+      _setLayout();
     });
   }
 
   void _onSetWidgetState(EWidgetStates state) {
     setState(() {
       _widgetStateController.setState(state);
+      if (state == EWidgetStates.bell) {
+        _selectedBottomNavigationItem = -1;
+      }
     });
+  }
+
+  _setLayout() {
+    switch (_selectedBottomNavigationItem) {
+      case 0:
+        _onSetWidgetState(EWidgetStates.posts);
+        break;
+      case 1:
+        _onSetWidgetState(EWidgetStates.addPost);
+        break;
+      case 2:
+        _onSetWidgetState(EWidgetStates.user);
+        break;
+    }
+  }
+
+  _isShowCategories() {
+    if (_widgetStateController.getState() == EWidgetStates.user ||
+        _widgetStateController.getState() == EWidgetStates.addPost ||
+        _widgetStateController.getState() == EWidgetStates.bell) {
+      return false;
+    }
+    return true;
   }
 }

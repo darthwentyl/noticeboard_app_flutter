@@ -10,6 +10,8 @@ class AppStrings {
   static const String promotionInfo = "Miejsce na Twoje promocje\ne-mail:";
 
   static const String contestInfo = "Miejsce na Twoje konkursy\ne-mail:";
+
+  static const String addPostTitle = "Dodaj post/ogłoszenie";
 }
 
 class ButtonStrings {
