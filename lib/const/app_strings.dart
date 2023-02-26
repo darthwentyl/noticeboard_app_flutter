@@ -32,3 +32,7 @@ class ErrStrings {
       "Nie moge pobrać pytań. \nsprawdź połączenie z internetem.";
   static const String robotVerifyFailed = "Weryfikacja się nie powiodła.";
 }
+
+class EditStrings {
+  static const String addPostHint = "Wprowadź treść postu.";
+}
